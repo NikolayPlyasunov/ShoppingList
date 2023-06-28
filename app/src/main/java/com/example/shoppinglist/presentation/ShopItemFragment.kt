@@ -1,7 +1,6 @@
 package com.example.shoppinglist.presentation
 
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -41,7 +40,7 @@ class ShopItemFragment : Fragment() {
         component.inject(this)
 
         super.onAttach(context)
-        if (context is OnEditingFinishedListener){
+        if (context is OnEditingFinishedListener) {
             onEditingFinishedListener = context
         } else {
             throw RuntimeException("Activity must implement OnEditingFinishedListener")
@@ -56,7 +55,7 @@ class ShopItemFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel = ViewModelProvider(this,viewModelFactory)[ShopItemViewModel::class.java]
+        viewModel = ViewModelProvider(this, viewModelFactory)[ShopItemViewModel::class.java]
         initViews(view)
         addTextChangeListener()
         launchRightMode()
@@ -170,7 +169,7 @@ class ShopItemFragment : Fragment() {
 
     }
 
-    interface OnEditingFinishedListener{
+    interface OnEditingFinishedListener {
         fun onEditingFinished()
     }
 

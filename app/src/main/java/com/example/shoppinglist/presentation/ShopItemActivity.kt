@@ -2,18 +2,10 @@ package com.example.shoppinglist.presentation
 
 import android.content.Context
 import android.content.Intent
-import android.content.Intent.parseIntent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
-import android.util.Log
-import android.widget.Button
-import android.widget.EditText
-import androidx.lifecycle.ViewModelProvider
+import androidx.appcompat.app.AppCompatActivity
 import com.example.shoppinglist.R
 import com.example.shoppinglist.domain.ShopItem
-import com.google.android.material.textfield.TextInputLayout
 
 class ShopItemActivity : AppCompatActivity(), ShopItemFragment.OnEditingFinishedListener {
 
@@ -24,7 +16,7 @@ class ShopItemActivity : AppCompatActivity(), ShopItemFragment.OnEditingFinished
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shop_item)
-       parseIntent()
+        parseIntent()
         if (savedInstanceState == null) {
             launchRightMode()
         }
@@ -36,14 +28,14 @@ class ShopItemActivity : AppCompatActivity(), ShopItemFragment.OnEditingFinished
     }
 
     private fun launchRightMode() {
-       val fragment = when (screenMode) {
+        val fragment = when (screenMode) {
             MODE_EDIT -> ShopItemFragment.newInstanceEditItem(shopItemId)
             MODE_ADD -> ShopItemFragment.newInstanceAddItem()
-           else -> throw RuntimeException("Unknown screen mode $screenMode")
+            else -> throw RuntimeException("Unknown screen mode $screenMode")
         }
-    supportFragmentManager.beginTransaction()
-        .replace(R.id.shop_item_container,fragment)
-        .commit()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.shop_item_container, fragment)
+            .commit()
     }
 
     private fun parseIntent() {

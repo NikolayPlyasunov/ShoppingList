@@ -1,15 +1,13 @@
 package com.example.shoppinglist.presentation
 
-import android.app.Application
-import androidx.lifecycle.*
-import com.example.shoppinglist.data.ShopListRepositoryImpl
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.shoppinglist.domain.AddShopItemUseCase
 import com.example.shoppinglist.domain.EditShopItemUseCase
 import com.example.shoppinglist.domain.GetShopItemUseCase
 import com.example.shoppinglist.domain.ShopItem
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
