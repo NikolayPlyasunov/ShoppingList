@@ -23,8 +23,10 @@
             android:id="@+id/et_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Name:"
-            android:inputType="textCapWords" />
+            android:backgroundTint="@color/green2"
+            android:hint="@string/name_hint"
+            android:inputType="textCapWords"
+            android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -43,15 +45,19 @@
             android:id="@+id/et_count"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Count:"
-            android:inputType="number" />
+            android:backgroundTint="@color/green2"
+            android:hint="@string/count_hint"
+            android:inputType="number"
+            android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/save_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Save"
+        android:backgroundTint="@color/green"
+        android:text="@string/save_btn"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
